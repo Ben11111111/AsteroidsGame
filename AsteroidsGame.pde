@@ -1,4 +1,5 @@
 
+
 //your variable declarations here
 Spaceship bob;
 Star [] bub = new Star [100];
@@ -51,15 +52,6 @@ public void keyPressed() {
     bob.turn(5*PI);
   }
   if (key =='f') {
-    bob.setX((Math.random()*500));
-    bob.setY((Math.random()*500));
-    bob.setXspeed(0);
-    bob.setYspeed(0);
-    bob.setdirection(Math.random()*360);
-    bob.getXspeed();
-    bob.getYspeed();
-    bob.getdirection();
-    bob.getX();
-    bob.getY();
+    bob.hyperspace();
   }
 }
