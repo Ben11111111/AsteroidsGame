@@ -9,7 +9,7 @@ public void setup()
 {
 
   size(500, 500);
-  
+  background(0);
   bob = new Spaceship();
   for (int i =0; i<bub.length; i++) {
     bub[i] = new Star();
