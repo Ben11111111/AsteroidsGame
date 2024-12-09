@@ -24,6 +24,7 @@ public void draw()
   background (0);
   bob.show();
   bob.move();
+  
   for (int i =0; i<bub.length; i++) {
     bub[i].show();
   }
@@ -31,6 +32,7 @@ public void draw()
     Asteroid a = beb.get(i);
     a.show();
     a.move();
+    a.turn(a.rotSpeed);
     if (dist((float) a.getCenterX(), (float) a.getCenterY(), (float) bob.getX(), (float) bob.getY()) < 20)
     {
       beb.remove(i);
