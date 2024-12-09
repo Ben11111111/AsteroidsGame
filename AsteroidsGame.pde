@@ -15,8 +15,8 @@ public void setup()
   }
   beb = new ArrayList<Asteroid>();
   for (int i = 0; i < 5; i++) {
-Asteroid asteroid = new Asteroid();    
-beb.add(asteroid);
+    Asteroid asteroid = new Asteroid();
+    beb.add(asteroid);
   }
 }
 public void draw()
@@ -27,14 +27,15 @@ public void draw()
   for (int i =0; i<bub.length; i++) {
     bub[i].show();
   }
-  for (int i = beb.size() - 1; i >= 0; i--) {
+  for (int i = 0; i < beb.size(); i++) {
     Asteroid a = beb.get(i);
     a.show();
     a.move();
     if (dist((float) a.getCenterX(), (float) a.getCenterY(), (float) bob.getX(), (float) bob.getY()) < 20)
     {
       beb.remove(i);
-    }
+      i--;  
+  }
   }
 }
 public void keyPressed() {
