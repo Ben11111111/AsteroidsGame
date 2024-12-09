@@ -9,15 +9,15 @@ public void setup()
 {
 
   size(500, 500);
-  background(0);
+ 
   bob = new Spaceship();
   for (int i =0; i<bub.length; i++) {
     bub[i] = new Star();
   }
   beb = new ArrayList<Asteroid>();
   for (int i = 0; i < 5; i++) {
-    Asteroid bab = new Asteroid();
-    beb.add(i, bab);
+    
+    beb.add(new Asteroid());
   }
 }
 public void draw()
