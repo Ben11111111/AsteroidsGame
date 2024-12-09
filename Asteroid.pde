@@ -1,37 +1,65 @@
-class Asteroid extends Floater
-{
-  private double rotSpeed;
 
-  public Asteroid () {
-    corners = 6;
-    xCorners = new int []{-11, 7, 13, 6, -11, -5};
-    yCorners = new int []{-8, -8, 0, 10, 8, 0};
-    myColor = color(255);
-    myCenterX = Math.random()*width;
-    myCenterY = Math.random()*height;
-    myXspeed = (Math.random()*5)-2;
-    myYspeed = (Math.random()*5)-2;
-    myPointDirection = Math.random()*360;
-    rotSpeed = (Math.random()*5)-2;
+//your variable declarations here
+Spaceship bob;
+Star [] bub = new Star [100];
+ArrayList <Asteroid> beb;
+
+public void setup()
+{
+
+  size(500, 500);
+  background (0);
+  bob = new Spaceship();
+  for (int i =0; i<bub.length; i++) {
+    bub[i] = new Star();
   }
-   public void turn (double rotSpeed)   
-  {     
-    //rotates the floater by a given number of degrees    
-    myPointDirection+= rotSpeed;
+  beb = new ArrayList<Asteroid>();
+  for (int i = 0; i < 5; i++) {
+    Asteroid asteroid = new Asteroid();
+    beb.add(asteroid);
   }
-  public void move() {
-    
-    super.move();
+}
+public void draw()
+{
+  background (0);
+  bob.show();
+  bob.move();
+
+  for (int i =0; i<bub.length; i++) {
+    bub[i].show();
   }
-  public void show() {
-    fill(myColor);
-    
-    super.show();
+  for (int i = 0; i < beb.size(); i++) {
+    Asteroid a = beb.get(i);
+    a.show();
+    a.move();
+    a.turn(a.rotSpeed);
+    if (dist((float) a.getCenterX(), (float) a.getCenterY(), (float) bob.getX(), (float) bob.getY()) < 20)
+    {
+      beb.remove(i);
+      i--;
+    }
   }
-  public double getCenterX() {
-    return myCenterX;
+}
+public void keyPressed() {
+  if (key =='w') {
+    bob.accelerate(0.1);
   }
-  public double getCenterY() {
-    return myCenterY;
+  if (key =='a') {
+    bob.turn(-5*PI);
+  }
+  if (key =='d') {
+    bob.turn(5*PI);
+  }
+  if (key =='f') {
+    bob.setX((Math.random()*500));
+    bob.setY((Math.random()*500));
+    bob.setXspeed(0);
+    bob.setYspeed(0);
+    bob.setdirection(Math.random()*360);
+    println("New X Speed: " + bob.getXspeed());
+    println("New Y Speed: " + bob.getYspeed());
+    println("New Direction: " + bob.getdirection());
+    println("New X Position: " + bob.getX());
+    println("New Y Position: " + bob.getY());
   }
 }
