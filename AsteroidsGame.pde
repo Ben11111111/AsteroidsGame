@@ -17,7 +17,7 @@ public void setup()
   beb = new ArrayList<Asteroid>();
   for (int i = 0; i < 5; i++) {
     Asteroid bab = new Asteroid();
-    beb.add(bab);
+    beb.add(i, bab);
   }
 }
 public void draw()
