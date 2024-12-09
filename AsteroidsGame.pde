@@ -14,7 +14,7 @@ public void setup()
   for (int i =0; i<bub.length; i++) {
     bub[i] = new Star();
   }
-  beb = new ArrayList<Asteroid>();
+ 
   for (int i = 0; i < 5; i++) {
     
     beb.add(new Asteroid());
