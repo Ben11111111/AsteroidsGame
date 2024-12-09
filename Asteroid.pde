@@ -26,7 +26,7 @@ class Asteroid extends Floater
   }
   public void show() {
     fill(myColor);
-    beginShape();
+   
     super.show();
   }
   public double getCenterX() {
