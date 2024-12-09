@@ -3,7 +3,7 @@
 //your variable declarations here
 Spaceship bob;
 Star [] bub = new Star [100];
-ArrayList <Asteroid> beb;
+ArrayList <Asteroid> beb = new ArrayList <Asteroid>();
 
 public void setup()
 {
@@ -16,8 +16,8 @@ public void setup()
   }
   beb = new ArrayList<Asteroid>();
   for (int i = 0; i < 5; i++) {
-    Asteroid asteroid = new Asteroid();
-    beb.add(asteroid);
+    Asteroid bab = new Asteroid();
+    beb.add(bab);
   }
 }
 public void draw()
@@ -30,11 +30,11 @@ public void draw()
     bub[i].show();
   }
   for (int i = 0; i < beb.size(); i++) {
-    Asteroid a = beb.get(i);
-    a.show();
-    a.move();
-    a.turn(a.rotSpeed);
-    if (dist((float) a.getCenterX(), (float) a.getCenterY(), (float) bob.getX(), (float) bob.getY()) < 20)
+    beb.get(i).show();
+    beb.get(i).move();
+   
+    
+    if (dist((float) beb.get(i).getCenterX(), (float) beb.get(i).getCenterY(), (float) bob.getX(), (float) bob.getY()) < 20)
     {
       beb.remove(i);
       i--;  
