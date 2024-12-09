@@ -22,7 +22,7 @@ class Asteroid extends Floater
     else if (myCenterX < 0) myCenterX = width;
     if (myCenterY > height) myCenterY = 0;
     else if (myCenterY < 0) myCenterY = height;
-    super.move();
+    //super.move();
   }
   public void show() {
     fill(myColor);
