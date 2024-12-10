@@ -13,12 +13,8 @@ public void setup()
   bob = new Spaceship();
   for (int i =0; i<bub.length; i++) {
     bub[i] = new Star();
-  }
- 
-  for (int i = 0; i < 5; i++) {
-    
     beb.add(new Asteroid());
-  }
+ }
 }
 public void draw()
 {
