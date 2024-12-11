@@ -14,13 +14,11 @@ class Asteroid extends Floater
     myPointDirection = Math.random()*360;
     rotSpeed = (Math.random()*5)-2;
   }
-   public void turn (double rotSpeed)   
-  {     
-    //rotates the floater by a given number of degrees    
-    myPointDirection+= rotSpeed;
-  }
-  public void move() {
+  
     
+  
+  public void move() {
+    myPointDirection+= rotSpeed;
     super.move();
   }
   public void show() {
